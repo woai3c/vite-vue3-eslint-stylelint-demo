@@ -6,7 +6,8 @@
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx,.d.ts,.vue src/",
-    "lint:css": "stylelint src/**/*.{vue,scss,css,sass}"
+    "lint:css": "stylelint src/**/*.{vue,scss,css,sass}",
+    "prepare": "husky install"
   },
   "dependencies": {
     "vue": "^3.2.16"
@@ -14,11 +15,6 @@
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": "eslint",
     "src/**/*.{vue,scss,css,sass}": "stylelint"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.1.0",
@@ -29,11 +25,15 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-typescript": "^0.14.0",
     "eslint-plugin-vue": "^7.20.0",
-    "husky": "^4.2.3",
+    "husky": "^8.0.1",
+    "postcss": "^8.4.17",
+    "postcss-html": "^1.5.0",
+    "postcss-scss": "^4.0.5",
     "sass": "^1.43.3",
-    "stylelint": "^13.13.1",
-    "stylelint-config-standard": "^22.0.0",
-    "stylelint-scss": "^3.21.0",
+    "stylelint": "^14.13.0",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-standard-scss": "^5.0.0",
+    "stylelint-scss": "^4.3.0",
     "typescript": "^4.4.3",
     "vite": "^2.6.4",
     "vue-eslint-parser": "^7.11.0",
