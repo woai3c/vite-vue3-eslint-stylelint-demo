@@ -10,8 +10,8 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,vue}": "eslint --fix",
-    "src/**/*.{scss,css,sass,vue}": "stylelint --fix"
+    "src/**/*.{js,jsx,ts,tsx,vue}": ["eslint --fix", "git add"],
+    "src/**/*.{scss,css,sass,vue}": ["stylelint --fix", "git add"]
   },
   "dependencies": {
     "vue": "^3.2.41"
