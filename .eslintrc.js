@@ -1,25 +1,24 @@
 module.exports = {
     root: true,
-    globals: {
-        defineEmits: 'readonly',
-        defineProps: 'readonly',
+    env: {
+        browser: true,
+        node: true,
+        es6: true,
     },
     extends: [
         'plugin:@typescript-eslint/recommended',
         'plugin:vue/vue3-recommended',
-        'airbnb-base',      
+        'airbnb-base',
     ],
+    plugins: ['@typescript-eslint'],
     parser: 'vue-eslint-parser',
-    plugins: [
-        '@typescript-eslint',
-    ],
     parserOptions: {
         parser: '@typescript-eslint/parser',
-        ecmaVersion: 2020,
+        ecmaVersion: 'latest',
     },
     rules: {
         'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-        'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+        'no-console': 'off',
         'no-bitwise': 'off',
         'no-tabs': 'off',
         'array-element-newline': ['error', 'consistent'],
@@ -78,18 +77,50 @@ module.exports = {
         '@typescript-eslint/ban-types': 'off',
         'class-methods-use-this': 'off',
         'no-return-await': 'off',
+        'vue/multi-word-component-names': 'off',
+        '@typescript-eslint/no-non-null-assertion': 'off',
+        'semi-style': ['error', 'first'],
+        'vue/singleline-html-element-content-newline': 'off',
+        'vue/v-on-event-hyphenation': [
+            'warn',
+            'never',
+            {
+                autofix: true,
+                ignore: [],
+            },
+        ],
+        'vue/attribute-hyphenation': [
+            'warn',
+            'never',
+            {
+                ignore: [],
+            },
+        ],
         'vue/html-indent': ['error', 4],
-        'vue/html-self-closing': 'off',
         'vue/max-attributes-per-line': ['warn', {
             singleline: {
                 max: 3,
-                allowFirstLine: true,
             },      
             multiline: {
                 max: 1,
-                allowFirstLine: false,
             },
         }],
-        'vue/singleline-html-element-content-newline': 'off',
+        'vue/html-self-closing': ['error', {
+            html: {
+                void: 'always',
+                normal: 'never',
+                component: 'always',
+            },
+            svg: 'always',
+            math: 'always',
+        }],
     },
+    overrides: [
+        {
+            files: ['*.ts', '*.tsx', '*.vue'],
+            rules: {
+                'no-undef': 'off',
+            },
+        },
+    ],
 }
