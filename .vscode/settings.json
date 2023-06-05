@@ -9,6 +9,15 @@
         "postcss",
         "scss",
         "sass",
-        "vue"
     ],
+    "files.eol": "\n",
+    "files.associations": {
+        "*.css": "tailwindcss",
+        "*.scss": "scss"
+    },
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+    "scss.lint.unknownAtRules": "ignore",
+    "eslint.format.enable": true,
 }
